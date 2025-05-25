@@ -6,10 +6,14 @@ function toggleMenu() {
 // Add event listener to the hamburger icon
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
-  if (hamburger) {
-    hamburger.addEventListener("click", toggleMenu);
+  const navMenu = document.querySelector("nav ul");
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
   } else {
-    console.error("Hamburger icon not found!");
+    console.error("Hamburger icon or navigation menu not found!");
   }
 });
 
